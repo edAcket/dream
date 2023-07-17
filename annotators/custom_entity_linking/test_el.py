@@ -2,9 +2,19 @@ import requests
 
 use_context = True
 
-
-def main():
-    url = "http://0.0.0.0:8153"
+@pytest.mark.parametrize(
+    "request_data", "gold_results",
+    [
+        {
+            "user_id": ["1234"],
+            "entity_substr": [["forrest gump"]],
+            "entity_tags": [[[("film", 1.0)]]],
+            "context": [["who directed forrest gump?"]],
+        }
+    ],
+    ["film/123"]
+)
+def test_entity_linking(url: str, request_data: list[dict], gold_results: list):
     inserted_data = {
         "user_id": "1234",
         "entity_info": {
@@ -15,20 +25,9 @@ def main():
     }
     requests.post(f"{url}/add_entities", json=inserted_data)
 
-    request_data = [
-        {
-            "user_id": ["1234"],
-            "entity_substr": [["forrest gump"]],
-            "entity_tags": [[[("film", 1.0)]]],
-            "context": [["who directed forrest gump?"]],
-        }
-    ]
-    gold_results = [["film/123"]]
-
     count = 0
     for data, gold_result in zip(request_data, gold_results):
         result = requests.post(f"{url}/model", json=data).json()
-        print(result)
 
         entity_ids = []
         for entity_info_list in result:
@@ -41,8 +40,3 @@ def main():
             print(f"Got {result}, but expected: {gold_result}")
 
     assert count == len(request_data)
-    print("Success")
-
-
-if __name__ == "__main__":
-    main()
