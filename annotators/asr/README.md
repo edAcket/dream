@@ -11,7 +11,7 @@ This component calculates overall ASR confidence for a given utterance and grade
 user utterance: recorded voice as a `.wav` file
 
 **Output** 
-asr_confidence: a probability of a user speech recognition 
+asr_confidence: a probability of a user's speech recognition 
 
 
 ## Dependencies
