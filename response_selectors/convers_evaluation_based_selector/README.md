@@ -3,9 +3,11 @@
 ## Description
 
 Response Selector is a component selecting final response among the given hypotheses by different skills.
+
 The Tag- and Evaluation--based Response Selector utilizes a complicated approach which aims to
-prioritize scripted skills while having an opportunity to provide a system-initiative via so called linking questions
-that bring conversation to the scripts. A final hypotheses could be a combination of a hypotheses and linking question.
+prioritize scripted skills while having an opportunity to provide a system-initiative via so-called linking questions that bring conversation to the scripts. 
+A final hypothesis could be a combination of a hypothesis and linking question.
+
 The approach is most suitable for distributions where the most of the responses are implied to be by scripts.
 
 ### Parameters
@@ -36,5 +38,9 @@ LANGUAGE: language to consider
 FALLBACK_FILE: a file name with fallbacks from `dream/common/fallbacks/`
 ```
 
-## Dependencies
+## Input/Output
+**Input:** a list of hypotheses with their scores and metadata
+**Output:** a list of selected hypotheses with their scores and metadata
 
+## Dependencies
+none
