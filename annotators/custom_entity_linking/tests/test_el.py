@@ -3,26 +3,28 @@ import requests
 
 use_context = True
 
+
 @pytest.mark.parametrize(
     "inserted_data, request_data, gold_results",
-    [(
-        {
-            "user_id": "1234",
-            "entity_info": {
-                "entity_substr": ["forrest gump"],
-                "entity_ids": ["film/123"],
-                "tags": ["film"],
+    [
+        (
+            {
+                "user_id": "1234",
+                "entity_info": {
+                    "entity_substr": ["forrest gump"],
+                    "entity_ids": ["film/123"],
+                    "tags": ["film"],
+                },
             },
-        },
-        {
-            "user_id": ["1234"],
-            "entity_substr": [["forrest gump"]],
-            "entity_tags": [[[("film", 1.0)]]],
-            "context": [["who directed forrest gump?"]],
-        }
-    ,
-    ["film/123"]
-    )]
+            {
+                "user_id": ["1234"],
+                "entity_substr": [["forrest gump"]],
+                "entity_tags": [[[("film", 1.0)]]],
+                "context": [["who directed forrest gump?"]],
+            },
+            ["film/123"],
+        )
+    ],
 )
 def test_entity_linking(url: str, inserted_data: dict, request_data: dict, gold_results: list):
     requests.post(f"{url}/add_entities", json=inserted_data)
