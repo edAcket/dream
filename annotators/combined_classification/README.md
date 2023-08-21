@@ -30,5 +30,3 @@ This model(with a distilbert-base-uncased backbone) takes only 2439 Mb for 9 tas
 **Output:** tags for each utterance  (based on toxic/topic/emotion/sentiment/factoid/midas classification)
 
 ## Dependencies
-none
-

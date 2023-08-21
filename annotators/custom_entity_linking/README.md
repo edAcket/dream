@@ -23,7 +23,8 @@ Relation examples:
 user_id, entity substring, entity_tags
 
 **Output:** 
-processed information about:
+the annotator returns the processed entity information about:
+
 - entities
 - entity_id (ids for multiple entities)
 - entity_confidence score

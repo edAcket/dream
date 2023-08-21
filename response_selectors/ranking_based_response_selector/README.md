@@ -17,6 +17,7 @@ Parameter `FILTER_TOXIC_OR_BADLISTED` defines whether it filers out toxic hypoth
 ## Dependencies
 
 - either candidate annotations by `SENTENCE_RANKER_ANNOTATION_NAME` or service `SENTENCE_RANKER_SERVICE_URL`.
+<<<<<<< HEAD
 =======
 # Ranking_based_response_selector
 
@@ -39,3 +40,5 @@ text here
 
 ## Dependencies
 >>>>>>> readmes for dream multilingual dist
+=======
+>>>>>>> d88c9a32d47903f6fe4bf391b5b9f04b01dbc391

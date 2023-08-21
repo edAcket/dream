@@ -5,7 +5,14 @@
 COMeT is a Commonsense Transformers for Automatic Knowledge Graph Construction service based
 on [comet-commonsense](https://github.com/atcbosselut/comet-commonsense) framework written in Python 3.
 
+<<<<<<< HEAD
 
+=======
+<<<<<<< HEAD
+
+=======
+>>>>>>> dev
+>>>>>>> d88c9a32d47903f6fe4bf391b5b9f04b01dbc391
 ### Quickstart from docker for COMeT with Atomic graph
 
 ```bash
@@ -40,9 +47,15 @@ docker-compose -f docker-compose.yml -f local.yml exec comet-conceptnet bash tes
 ## Input/Output
 
 **Input** 
+<<<<<<< HEAD
 - hypotheses: possible assistant's replies
 - currentUtterance: latest reply from a user
 - pastResponses: a list of user's utterances 
+=======
+- hypotheses: possible assistant's replies (?)
+- currentUtterance: latest reply from a user
+- pastResponses: a list of user utterances 
+>>>>>>> d88c9a32d47903f6fe4bf391b5b9f04b01dbc391
 
 **Output**
 a list of probabilities about the utterance:
