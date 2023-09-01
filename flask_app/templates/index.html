@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Flask App</title>
+</head>
+<body>
+    <h1>Async Flask App</h1>
+    <form method="POST">
+        <ul>
+            <li>
+                <label for="message">Введите ваше предложение:</label>
+                <input type="text" id="message" name="message">
+                <button type="submit" name="action" value="add">Добавить</button>
+            </li>
+        </ul>
+    </form>
+
+    <h2>Все предложения:</h2>
+    <ul>
+        {% for message in messages %}
+        <li>{{ message }}</li>
+        {% endfor %}
+    </ul>
+
+    <form method="POST">
+        <div>
+            <button type="submit" name="action" value="clear">Очистить</button>
+            <button type="submit" name="action" value="send">Отправить</button>
+        </div>
+    </form>
+
+    <h2>Ответ от целевого сервиса:</h2>
+    <p>{{ response_message }}</p>
+</body>
+</html>

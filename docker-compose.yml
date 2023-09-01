@@ -16,4 +16,21 @@ services:
     command: mongod
     image: mongo:4.0.0
 
+  mongodb:
+    image: mongo
+    container_name: mymongodb
+    ports:
+      - "27017:27017"
+
+  flask-app:
+    build:
+      context: ./flask_app
+    container_name: myflaskapp
+    ports:
+      - "5000:5000"
+    depends_on:
+      - mongodb 
+    environment:
+      MONGO_URI: mongodb://mongodb:27017/mydatabase 
+
 version: '3.7'
